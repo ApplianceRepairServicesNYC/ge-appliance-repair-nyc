@@ -25,7 +25,7 @@
   <script type="text/javascript">
     (function() {
       try {
-        emailjs.init({ publicKey: "YOUR_EMAILJS_PUBLIC_KEY" });
+        emailjs.init({ publicKey: "zfCrLmZU8eK9CuZcs" });
         console.log("EmailJS initialized successfully");
       } catch (error) {
         console.error("Failed to initialize EmailJS:", error);
@@ -897,27 +897,32 @@ if ('serviceWorker' in navigator) {
         &lt;form id=&quot;cfContactForm&quot; class=&quot;cf-contact-form&quot; novalidate&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfName&quot;&gt;Name &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;input type=&quot;text&quot; id=&quot;cfName&quot; placeholder=&quot;John Doe&quot; required aria-describedby=&quot;cfNameError&quot;&gt;
+                &lt;input type=&quot;text&quot; id=&quot;cfName&quot; name=&quot;from_name&quot; placeholder=&quot;John Doe&quot; required aria-describedby=&quot;cfNameError&quot;&gt;
                 &lt;span id=&quot;cfNameError&quot; class=&quot;error-message&quot;&gt;Please enter your name.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfEmail&quot;&gt;Email &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;input type=&quot;email&quot; id=&quot;cfEmail&quot; placeholder=&quot;john@example.com&quot; required aria-describedby=&quot;cfEmailError&quot;&gt;
+                &lt;input type=&quot;email&quot; id=&quot;cfEmail&quot; name=&quot;user_email&quot; placeholder=&quot;john@example.com&quot; required aria-describedby=&quot;cfEmailError&quot;&gt;
                 &lt;span id=&quot;cfEmailError&quot; class=&quot;error-message&quot;&gt;Please enter a valid email address.&lt;/span&gt;
             &lt;/div&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;reply_to&quot; id=&quot;cfReplyTo&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;email&quot; id=&quot;cfEmailHidden&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;from_email&quot; id=&quot;cfFromEmail&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;customer_email&quot; id=&quot;cfCustomerEmail&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;appliance_type&quot; id=&quot;cfApplianceType&quot;&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfPhone&quot;&gt;Phone &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;input type=&quot;tel&quot; id=&quot;cfPhone&quot; placeholder=&quot;1234567890&quot; required pattern=&quot;[0-9]{10}&quot; aria-describedby=&quot;cfPhoneError&quot;&gt;
+                &lt;input type=&quot;tel&quot; id=&quot;cfPhone&quot; name=&quot;phone&quot; placeholder=&quot;1234567890&quot; required pattern=&quot;[0-9]{10}&quot; aria-describedby=&quot;cfPhoneError&quot;&gt;
                 &lt;span id=&quot;cfPhoneError&quot; class=&quot;error-message&quot;&gt;Please enter a valid 10-digit phone number.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfAddress&quot;&gt;Address &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;textarea id=&quot;cfAddress&quot; placeholder=&quot;123 Main St, Apt 4B, New York, NY 10001&quot; required aria-describedby=&quot;cfAddressError&quot;&gt;&lt;/textarea&gt;
+                &lt;textarea id=&quot;cfAddress&quot; name=&quot;address&quot; placeholder=&quot;123 Main St, Apt 4B, New York, NY 10001&quot; required aria-describedby=&quot;cfAddressError&quot;&gt;&lt;/textarea&gt;
                 &lt;span id=&quot;cfAddressError&quot; class=&quot;error-message&quot;&gt;Please enter your address.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfSubject&quot;&gt;Subject &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;select id=&quot;cfSubject&quot; required aria-describedby=&quot;cfSubjectError&quot;&gt;
+                &lt;select id=&quot;cfSubject&quot; name=&quot;subject&quot; required aria-describedby=&quot;cfSubjectError&quot;&gt;
                     &lt;option value=&quot;&quot;&gt;Select a Subject&lt;/option&gt;
                     &lt;option value=&quot;refrigerator_repair&quot;&gt;Refrigerator Repair&lt;/option&gt;
                     &lt;option value=&quot;oven_repair&quot;&gt;Oven Repair&lt;/option&gt;
@@ -936,7 +941,7 @@ if ('serviceWorker' in navigator) {
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfMessage&quot;&gt;Message &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;textarea id=&quot;cfMessage&quot; placeholder=&quot;Describe your appliance issue...&quot; required aria-describedby=&quot;cfMessageError&quot;&gt;&lt;/textarea&gt;
+                &lt;textarea id=&quot;cfMessage&quot; name=&quot;message&quot; placeholder=&quot;Describe your appliance issue...&quot; required aria-describedby=&quot;cfMessageError&quot;&gt;&lt;/textarea&gt;
                 &lt;span id=&quot;cfMessageError&quot; class=&quot;error-message&quot;&gt;Please enter your message.&lt;/span&gt;
             &lt;/div&gt;
             &lt;button type=&quot;submit&quot; class=&quot;cf-form-button&quot; aria-label=&quot;Submit contact form&quot;&gt;Send Message&lt;/button&gt;
@@ -1340,6 +1345,12 @@ document.addEventListener(&#x27;DOMContentLoaded&#x27;,()=&gt;{
         if(!message){ document.getElementById(&#x27;cfMessage&#x27;).parentElement.classList.add(&#x27;invalid&#x27;); valid=false; msg+=&#x27;Message required.\n&#x27;;}
 
         if(!valid){ alert(&#x27;Please fix:\n&#x27;+msg); return; }
+
+        document.getElementById(&#x27;cfReplyTo&#x27;).value = email;
+        document.getElementById(&#x27;cfEmailHidden&#x27;).value = email;
+        document.getElementById(&#x27;cfFromEmail&#x27;).value = email;
+        document.getElementById(&#x27;cfCustomerEmail&#x27;).value = email;
+        document.getElementById(&#x27;cfApplianceType&#x27;).value = subject;
 
         emailjs.sendForm(&#x27;service_emxksio&#x27;,&#x27;template_tmexlql&#x27;,cfForm)
             .then(()=&gt;{ showModal(); cfForm.reset(); cfFormSect.classList.remove(&#x27;active&#x27;); cfBookBtn.setAttribute(&#x27;aria-expanded&#x27;,&#x27;false&#x27;); })
