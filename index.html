@@ -894,57 +894,55 @@ if ('serviceWorker' in navigator) {
     &lt;span id=&quot;cfCallSlot&quot; aria-live=&quot;polite&quot; class=&quot;cf-call-slot&quot;&gt;&lt;/span&gt;
     &lt;div class=&quot;cf-contact-form-section&quot; id=&quot;cfContactFormSection&quot;&gt;
         &lt;p class=&quot;expect-text&quot;&gt;What to Expect: Once you submit your request, a representative will contact you within 30 minutes to discuss available dates, service details, and associated charges before confirming your appointment.&lt;/p&gt;
-        &lt;form id=&quot;cfContactForm&quot; class=&quot;cf-contact-form&quot; novalidate&gt;
+        &lt;form id=&quot;cfContactForm&quot; class=&quot;cf-contact-form&quot; action=&quot;https://formsubmit.co/insuranceappliance@gmail.com&quot; method=&quot;POST&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;_subject&quot; value=&quot;New GE Appliance Repair Request&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;_captcha&quot; value=&quot;false&quot;&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;_template&quot; value=&quot;table&quot;&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfName&quot;&gt;Name &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;input type=&quot;text&quot; id=&quot;cfName&quot; name=&quot;from_name&quot; placeholder=&quot;John Doe&quot; required aria-describedby=&quot;cfNameError&quot;&gt;
+                &lt;input type=&quot;text&quot; id=&quot;cfName&quot; name=&quot;Name&quot; placeholder=&quot;John Doe&quot; required aria-describedby=&quot;cfNameError&quot;&gt;
                 &lt;span id=&quot;cfNameError&quot; class=&quot;error-message&quot;&gt;Please enter your name.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfEmail&quot;&gt;Email &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;input type=&quot;email&quot; id=&quot;cfEmail&quot; name=&quot;user_email&quot; placeholder=&quot;john@example.com&quot; required aria-describedby=&quot;cfEmailError&quot;&gt;
+                &lt;input type=&quot;email&quot; id=&quot;cfEmail&quot; name=&quot;Email&quot; placeholder=&quot;john@example.com&quot; required aria-describedby=&quot;cfEmailError&quot;&gt;
                 &lt;span id=&quot;cfEmailError&quot; class=&quot;error-message&quot;&gt;Please enter a valid email address.&lt;/span&gt;
             &lt;/div&gt;
-            &lt;input type=&quot;hidden&quot; name=&quot;reply_to&quot; id=&quot;cfReplyTo&quot;&gt;
-            &lt;input type=&quot;hidden&quot; name=&quot;email&quot; id=&quot;cfEmailHidden&quot;&gt;
-            &lt;input type=&quot;hidden&quot; name=&quot;from_email&quot; id=&quot;cfFromEmail&quot;&gt;
-            &lt;input type=&quot;hidden&quot; name=&quot;customer_email&quot; id=&quot;cfCustomerEmail&quot;&gt;
-            &lt;input type=&quot;hidden&quot; name=&quot;appliance_type&quot; id=&quot;cfApplianceType&quot;&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfPhone&quot;&gt;Phone &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;input type=&quot;tel&quot; id=&quot;cfPhone&quot; name=&quot;phone&quot; placeholder=&quot;1234567890&quot; required pattern=&quot;[0-9]{10}&quot; aria-describedby=&quot;cfPhoneError&quot;&gt;
+                &lt;input type=&quot;tel&quot; id=&quot;cfPhone&quot; name=&quot;Phone&quot; placeholder=&quot;1234567890&quot; required pattern=&quot;[0-9]{10}&quot; aria-describedby=&quot;cfPhoneError&quot;&gt;
                 &lt;span id=&quot;cfPhoneError&quot; class=&quot;error-message&quot;&gt;Please enter a valid 10-digit phone number.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
                 &lt;label for=&quot;cfAddress&quot;&gt;Address &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;textarea id=&quot;cfAddress&quot; name=&quot;address&quot; placeholder=&quot;123 Main St, Apt 4B, New York, NY 10001&quot; required aria-describedby=&quot;cfAddressError&quot;&gt;&lt;/textarea&gt;
+                &lt;textarea id=&quot;cfAddress&quot; name=&quot;Address&quot; placeholder=&quot;123 Main St, Apt 4B, New York, NY 10001&quot; required aria-describedby=&quot;cfAddressError&quot;&gt;&lt;/textarea&gt;
                 &lt;span id=&quot;cfAddressError&quot; class=&quot;error-message&quot;&gt;Please enter your address.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
-                &lt;label for=&quot;cfSubject&quot;&gt;Subject &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;select id=&quot;cfSubject&quot; name=&quot;subject&quot; required aria-describedby=&quot;cfSubjectError&quot;&gt;
-                    &lt;option value=&quot;&quot;&gt;Select a Subject&lt;/option&gt;
-                    &lt;option value=&quot;refrigerator_repair&quot;&gt;Refrigerator Repair&lt;/option&gt;
-                    &lt;option value=&quot;oven_repair&quot;&gt;Oven Repair&lt;/option&gt;
-                    &lt;option value=&quot;dishwasher_repair&quot;&gt;Dishwasher Repair&lt;/option&gt;
-                    &lt;option value=&quot;washing_machine_repair&quot;&gt;Washing Machine Repair&lt;/option&gt;
-                    &lt;option value=&quot;cooktop_repair&quot;&gt;Cooktop Repair&lt;/option&gt;
-                    &lt;option value=&quot;dryer_repair&quot;&gt;Dryer Repair&lt;/option&gt;
-                    &lt;option value=&quot;microwave_repair&quot;&gt;Microwave Repair&lt;/option&gt;
-                    &lt;option value=&quot;hood_vent_repair&quot;&gt;Hood Vent Repair&lt;/option&gt;
-                    &lt;option value=&quot;wine_cooler_repair&quot;&gt;Wine Cooler Repair&lt;/option&gt;
-                    &lt;option value=&quot;diagnostic_maintenance&quot;&gt;Diagnostic &amp; Maintenance&lt;/option&gt;
-                    &lt;option value=&quot;installation&quot;&gt;Installation&lt;/option&gt;
-                    &lt;option value=&quot;other&quot;&gt;Other&lt;/option&gt;
+                &lt;label for=&quot;cfSubject&quot;&gt;Appliance Type &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                &lt;select id=&quot;cfSubject&quot; name=&quot;Appliance_Type&quot; required aria-describedby=&quot;cfSubjectError&quot;&gt;
+                    &lt;option value=&quot;&quot;&gt;Select Appliance Type&lt;/option&gt;
+                    &lt;option value=&quot;GE Refrigerator Repair&quot;&gt;GE Refrigerator Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Oven Repair&quot;&gt;GE Oven Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Dishwasher Repair&quot;&gt;GE Dishwasher Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Washing Machine Repair&quot;&gt;GE Washing Machine Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Cooktop Repair&quot;&gt;GE Cooktop Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Dryer Repair&quot;&gt;GE Dryer Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Microwave Repair&quot;&gt;GE Microwave Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Hood Vent Repair&quot;&gt;GE Hood Vent Repair&lt;/option&gt;
+                    &lt;option value=&quot;GE Wine Cooler Repair&quot;&gt;GE Wine Cooler Repair&lt;/option&gt;
+                    &lt;option value=&quot;Diagnostic &amp;amp; Maintenance&quot;&gt;Diagnostic &amp; Maintenance&lt;/option&gt;
+                    &lt;option value=&quot;Installation&quot;&gt;Installation&lt;/option&gt;
+                    &lt;option value=&quot;Other&quot;&gt;Other&lt;/option&gt;
                 &lt;/select&gt;
-                &lt;span id=&quot;cfSubjectError&quot; class=&quot;error-message&quot;&gt;Please select a subject.&lt;/span&gt;
+                &lt;span id=&quot;cfSubjectError&quot; class=&quot;error-message&quot;&gt;Please select an appliance type.&lt;/span&gt;
             &lt;/div&gt;
             &lt;div class=&quot;cf-form-group&quot;&gt;
-                &lt;label for=&quot;cfMessage&quot;&gt;Message &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
-                &lt;textarea id=&quot;cfMessage&quot; name=&quot;message&quot; placeholder=&quot;Describe your appliance issue...&quot; required aria-describedby=&quot;cfMessageError&quot;&gt;&lt;/textarea&gt;
-                &lt;span id=&quot;cfMessageError&quot; class=&quot;error-message&quot;&gt;Please enter your message.&lt;/span&gt;
+                &lt;label for=&quot;cfMessage&quot;&gt;Describe the Issue &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+                &lt;textarea id=&quot;cfMessage&quot; name=&quot;Issue_Description&quot; placeholder=&quot;Please describe the problem with your appliance...&quot; required aria-describedby=&quot;cfMessageError&quot;&gt;&lt;/textarea&gt;
+                &lt;span id=&quot;cfMessageError&quot; class=&quot;error-message&quot;&gt;Please describe the issue.&lt;/span&gt;
             &lt;/div&gt;
-            &lt;button type=&quot;submit&quot; class=&quot;cf-form-button&quot; aria-label=&quot;Submit contact form&quot;&gt;Send Message&lt;/button&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;cf-form-button&quot; aria-label=&quot;Submit contact form&quot;&gt;Submit Request&lt;/button&gt;
         &lt;/form&gt;
     &lt;/div&gt;
     &lt;div class=&quot;cf-modal-overlay&quot; id=&quot;cfModalOverlay&quot;&gt;&lt;/div&gt;
@@ -970,7 +968,6 @@ if ('serviceWorker' in navigator) {
 }
 &lt;/script&gt;
 
-&lt;script&gt;var emailjs=function(e){&quot;use strict&quot;;class t{constructor(){let e=arguments.length&gt;0&amp;&amp;void 0!==arguments[0]?arguments[0]:0,t=arguments.length&gt;1&amp;&amp;void 0!==arguments[1]?arguments[1]:&quot;Network Error&quot;;this.status=e,this.text=t}}const i={origin:&quot;https://api.emailjs.com&quot;,blockHeadless:!1,storageProvider:(()=&gt;{if(&quot;undefined&quot;!=typeof localStorage)return{get:e=&gt;Promise.resolve(localStorage.getItem(e)),set:(e,t)=&gt;Promise.resolve(localStorage.setItem(e,t)),remove:e=&gt;Promise.resolve(localStorage.removeItem(e))}})()},r=e=&gt;e?&quot;string&quot;==typeof e?{publicKey:e}:&quot;[object Object]&quot;===e.toString()?e:{}:{},o=function(e){let t=arguments.length&gt;1&amp;&amp;void 0!==arguments[1]?arguments[1]:&quot;https://api.emailjs.com&quot;;if(!e)return;const o=r(e);i.publicKey=o.publicKey,i.blockHeadless=o.blockHeadless,i.storageProvider=o.storageProvider,i.blockList=o.blockList,i.limitRate=o.limitRate,i.origin=o.origin||t},a=async function(e,r){let o=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};const a=await fetch(i.origin+e,{method:&quot;POST&quot;,headers:o,body:r}),s=await a.text(),n=new t(a.status,s);if(a.ok)return n;throw n},s=(e,t,i)=&gt;{if(!e||&quot;string&quot;!=typeof e)throw&quot;The public key is required. Visit https://dashboard.emailjs.com/admin/account&quot;;if(!t||&quot;string&quot;!=typeof t)throw&quot;The service ID is required. Visit https://dashboard.emailjs.com/admin&quot;;if(!i||&quot;string&quot;!=typeof i)throw&quot;The template ID is required. Visit https://dashboard.emailjs.com/admin/templates&quot;},n=e=&gt;e.webdriver||!e.languages||0===e.languages.length,l=()=&gt;new t(451,&quot;Unavailable For Headless Browser&quot;),c=(e,t)=&gt;{if((e=&gt;!e.list?.length||!e.watchVariable)(e))return!1;((e,t)=&gt;{if(!Array.isArray(e))throw&quot;The BlockList list has to be an array&quot;;if(&quot;string&quot;!=typeof t)throw&quot;The BlockList watchVariable has to be a string&quot;})(e.list,e.watchVariable);const i=(r=t,o=e.watchVariable,r instanceof FormData?r.get(o):r[o]);var r,o;return&quot;string&quot;==typeof i&amp;&amp;e.list.includes(i)},d=()=&gt;new t(403,&quot;Forbidden&quot;),m=async(e,t,i)=&gt;{if(!t.throttle||!i)return!1;((e,t)=&gt;{if(&quot;number&quot;!=typeof e||e&lt;0)throw&quot;The LimitRate throttle has to be a positive number&quot;;if(t&amp;&amp;&quot;string&quot;!=typeof t)throw&quot;The LimitRate ID has to be a non-empty string&quot;})(t.throttle,t.id);const r=t.id||e,o=await(async(e,t,i)=&gt;{const r=Number(await i.get(e)||0);return t-Date.now()+r})(r,t.throttle,i);return o&gt;0||(await i.set(r,Date.now().toString()),!1)},h=()=&gt;new t(429,&quot;Too Many Requests&quot;),p=async(e,t,o,p)=&gt;{const u=r(p),b=u.publicKey||i.publicKey,g=u.blockHeadless||i.blockHeadless,f=u.storageProvider||i.storageProvider,w={...i.blockList,...u.blockList},y={...i.limitRate,...u.limitRate};if(g&amp;&amp;n(navigator))return Promise.reject(l());if(s(b,e,t),(e=&gt;{if(e&amp;&amp;&quot;[object Object]&quot;!==e.toString())throw&quot;The template params have to be the object. Visit https://www.emailjs.com/docs/sdk/send/&quot;})(o),o&amp;&amp;c(w,o))return Promise.reject(d());if(await m(location.pathname,y,f))return Promise.reject(h());const v={lib_version:&quot;4.4.1&quot;,user_id:b,service_id:e,template_id:t,template_params:o};return a(&quot;/api/v1.0/email/send&quot;,JSON.stringify(v),{&quot;Content-type&quot;:&quot;application/json&quot;})},u=async(e,t,o,p)=&gt;{const u=r(p),b=u.publicKey||i.publicKey,g=u.blockHeadless||i.blockHeadless,f=i.storageProvider||u.storageProvider,w={...i.blockList,...u.blockList},y={...i.limitRate,...u.limitRate};if(g&amp;&amp;n(navigator))return Promise.reject(l());const v=(e=&gt;&quot;string&quot;==typeof e?document.querySelector(e):e)(o);s(b,e,t),(e=&gt;{if(!e||&quot;FORM&quot;!==e.nodeName)throw&quot;The 3rd parameter is expected to be the HTML form element or the style selector of the form&quot;})(v);const j=new FormData(v);return c(w,j)?Promise.reject(d()):await m(location.pathname,y,f)?Promise.reject(h()):(j.append(&quot;lib_version&quot;,&quot;4.4.1&quot;),j.append(&quot;service_id&quot;,e),j.append(&quot;template_id&quot;,t),j.append(&quot;user_id&quot;,b),a(&quot;/api/v1.0/email/send-form&quot;,j))};var b={init:o,send:p,sendForm:u,EmailJSResponseStatus:t};return e.EmailJSResponseStatus=t,e.default=b,e.init=o,e.send=p,e.sendForm=u,Object.defineProperty(e,&quot;__esModule&quot;,{value:!0}),e}({});&lt;/script&gt;
 &lt;script&gt;
 /* -------------------------------------------------
    SERVICE-AREAS DATA (ALL NEIGHBORHOODS INCLUDED)
@@ -1282,7 +1279,6 @@ saPopulate(&#x27;manhattan&#x27;);
    CONTACT-FORM LOGIC
 ------------------------------------------------- */
 document.addEventListener(&#x27;DOMContentLoaded&#x27;,()=&gt;{
-    emailjs.init({publicKey:&quot;zfCrLmZU8eK9CuZcs&quot;});
     const cfBookBtn = document.getElementById(&#x27;cfBookButton&#x27;);
     const cfFormSect = document.getElementById(&#x27;cfContactFormSection&#x27;);
     const cfForm = document.getElementById(&#x27;cfContactForm&#x27;);
@@ -1340,21 +1336,23 @@ document.addEventListener(&#x27;DOMContentLoaded&#x27;,()=&gt;{
         const address = document.getElementById(&#x27;cfAddress&#x27;).value.trim();
         if(!address){ document.getElementById(&#x27;cfAddress&#x27;).parentElement.classList.add(&#x27;invalid&#x27;); valid=false; msg+=&#x27;Address required.\n&#x27;;}
         const subject = document.getElementById(&#x27;cfSubject&#x27;).value;
-        if(!subject){ document.getElementById(&#x27;cfSubject&#x27;).parentElement.classList.add(&#x27;invalid&#x27;); valid=false; msg+=&#x27;Subject required.\n&#x27;;}
+        if(!subject){ document.getElementById(&#x27;cfSubject&#x27;).parentElement.classList.add(&#x27;invalid&#x27;); valid=false; msg+=&#x27;Appliance type required.\n&#x27;;}
         const message = document.getElementById(&#x27;cfMessage&#x27;).value.trim();
-        if(!message){ document.getElementById(&#x27;cfMessage&#x27;).parentElement.classList.add(&#x27;invalid&#x27;); valid=false; msg+=&#x27;Message required.\n&#x27;;}
+        if(!message){ document.getElementById(&#x27;cfMessage&#x27;).parentElement.classList.add(&#x27;invalid&#x27;); valid=false; msg+=&#x27;Issue description required.\n&#x27;;}
 
         if(!valid){ alert(&#x27;Please fix:\n&#x27;+msg); return; }
 
-        document.getElementById(&#x27;cfReplyTo&#x27;).value = email;
-        document.getElementById(&#x27;cfEmailHidden&#x27;).value = email;
-        document.getElementById(&#x27;cfFromEmail&#x27;).value = email;
-        document.getElementById(&#x27;cfCustomerEmail&#x27;).value = email;
-        document.getElementById(&#x27;cfApplianceType&#x27;).value = subject;
-
-        emailjs.sendForm(&#x27;service_emxksio&#x27;,&#x27;template_tmexlql&#x27;,cfForm)
-            .then(()=&gt;{ showModal(); cfForm.reset(); cfFormSect.classList.remove(&#x27;active&#x27;); cfBookBtn.setAttribute(&#x27;aria-expanded&#x27;,&#x27;false&#x27;); })
-            .catch(err=&gt;{ console.error(err); alert(&#x27;Failed to send. Try again or call us.&#x27;); });
+        const formData = new FormData(cfForm);
+        fetch(cfForm.action, {
+            method: &#x27;POST&#x27;,
+            body: formData,
+            headers: { &#x27;Accept&#x27;: &#x27;application/json&#x27; }
+        })
+        .then(response =&gt; {
+            if(response.ok){ showModal(); cfForm.reset(); cfFormSect.classList.remove(&#x27;active&#x27;); cfBookBtn.setAttribute(&#x27;aria-expanded&#x27;,&#x27;false&#x27;); }
+            else { alert(&#x27;Failed to send. Please try again or call us.&#x27;); }
+        })
+        .catch(err=&gt;{ console.error(err); alert(&#x27;Failed to send. Please try again or call us.&#x27;); });
     });
 });
 &lt;/script&gt;
